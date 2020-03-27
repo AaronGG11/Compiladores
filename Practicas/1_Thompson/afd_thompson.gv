@@ -1,0 +1,12 @@
+digraph automata{
+	rankdir = LR;
+	node [shape = circle];
+
+	inicio [shape = point];
+	inicio -> 1 [label = "inicio"]
+	5 [shape = doublecircle]
+	1 -> 2 [label = "a"]
+	2 -> 3 [label = "b"]
+	3 -> 4 [label = "c"]
+	4 -> 5 [label = "d"]
+}
