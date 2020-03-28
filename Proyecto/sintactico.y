@@ -417,6 +417,12 @@ function_definition
 %%
 #include <stdio.h>
 
+int main()
+{
+  yyparse();
+}
+
+
 extern char yytext[];
 extern int column;
 
@@ -427,6 +433,4 @@ char *s;
 	printf("\n%*s\n%*s\n", column, "^", column, s);
 }
 
-int main(int argc, char** argv) {
-  yyparse();
-}
+
