@@ -1970,9 +1970,14 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-      
+        case 133:
+#line 265 "sintactico.y"
+    { printf(" soy un identificador! \n"); ;}
+    break;
+
+
 /* Line 1267 of yacc.c.  */
-#line 1976 "sintactico.tab.c"
+#line 1981 "sintactico.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
