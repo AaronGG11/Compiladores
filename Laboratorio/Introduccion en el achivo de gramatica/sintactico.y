@@ -63,7 +63,7 @@ multiplicative_expression
 	: cast_expression
 	| multiplicative_expression '*' cast_expression
 	| multiplicative_expression '/' cast_expression
-	| multiplicative_expression '%' cast_expression
+	| multiplicative_expression '%' cast_expression { printf("\tOperacion modulo detectada\n"); }
 	;
 
 additive_expression
@@ -186,7 +186,7 @@ type_specifier
 	: VOID
 	| CHAR
 	| SHORT
-	| INT
+	| INT { printf("\tDeclaracion de dato tipo INT\n"); }
 	| LONG
 	| FLOAT
 	| DOUBLE
@@ -262,10 +262,10 @@ declarator
 	;
 
 direct_declarator
-	: IDENTIFIER  { printf(" soy un identificador! \n"); }
+	: IDENTIFIER { printf("\tIdentificador detectado\n"); }
 	| '(' declarator ')'
-	| direct_declarator '[' constant_expression ']'
-	| direct_declarator '[' ']'
+	| direct_declarator '[' constant_expression ']' { printf("\tArreglo detectado\n"); }
+	| direct_declarator '[' ']'						{ printf("\tArreglo detectado\n"); }
 	| direct_declarator '(' parameter_type_list ')'
 	| direct_declarator '(' identifier_list ')'
 	| direct_declarator '(' ')'
@@ -377,7 +377,7 @@ expression_statement
 	;
 
 selection_statement
-	: IF '(' expression ')' statement
+	: IF '(' expression ')' { printf("\TSentencia IF detectada\n"); } statement 
 	| IF '(' expression ')' statement ELSE statement
 	| SWITCH '(' expression ')' statement
 	;
